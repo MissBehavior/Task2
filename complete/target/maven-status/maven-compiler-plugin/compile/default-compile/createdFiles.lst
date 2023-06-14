@@ -1,0 +1,14 @@
+aksesuaruparduotuve\producingwebservice\OrderEndpoint.class
+io\spring\guides\gs_producing_web_service\GetOrderRequest.class
+io\spring\guides\gs_producing_web_service\ObjectFactory.class
+io\spring\guides\gs_producing_web_service\User.class
+aksesuaruparduotuve\producingwebservice\OrderRepository.class
+aksesuaruparduotuve\producingwebservice\ProducingWebServiceApplication.class
+io\spring\guides\gs_producing_web_service\Courier.class
+io\spring\guides\gs_producing_web_service\GetOrderResponse.class
+io\spring\guides\gs_producing_web_service\Order.class
+aksesuaruparduotuve\producingwebservice\WebServiceConfig.class
+io\spring\guides\gs_producing_web_service\Product.class
+io\spring\guides\gs_producing_web_service\OrderItem.class
+io\spring\guides\gs_producing_web_service\package-info.class
+io\spring\guides\gs_producing_web_service\Category.class

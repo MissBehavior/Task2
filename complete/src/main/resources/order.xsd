@@ -1,0 +1,77 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getOrderRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getOrderResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="order" type="tns:order"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="order">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="orderAddress" type="xs:string"/>
+            <xs:element name="user" type="tns:user"/>
+            <xs:element name="courier" type="tns:courier"/>
+<!--            <xs:element name="orderItems" type="tns:orderItemss"/>-->
+            <xs:element name="orderItems" type="tns:orderItem" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="userName" type="xs:string"/>
+            <xs:element name="userPassword" type="xs:string"/>
+            <xs:element name="userEmail" type="xs:string"/>
+            <xs:element name="isAdmin" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="courier">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="courierName" type="xs:string"/>
+            <xs:element name="courierLastName" type="xs:string"/>
+            <xs:element name="courierphoneNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<!--    <xs:simpleType name="orderItemss">-->
+<!--        <xs:list itemType="tns:orderItem"/>-->
+<!--    </xs:simpleType>-->
+
+    <xs:complexType name="orderItem">
+        <xs:sequence >
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="orderItemQuantity" type="xs:int"/>
+            <xs:element name="product" type="tns:product"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="price" type="xs:int"/>
+            <xs:element name="productName" type="xs:string"/>
+            <xs:element name="category" type="tns:category"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="category">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="categoryName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
